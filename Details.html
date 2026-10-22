@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SafarNova- Destination Details</title>
+
+    
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="popper.js"></script>
+    <script type="text/javascript" src="bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="Master.css">
+    
+    <style>
+        body {
+            background-color: #f5f7fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .destination-header {
+            background-color: #008080;
+            color: white;
+            padding: 35px 15px;
+            text-align: center;
+        }
+
+        .destination-header h1 {
+            font-weight: bold;
+        }
+
+        .details-box {
+            background-color: white;
+            padding: 25px;
+            margin-top: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #ddd;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .section-title {
+            color: #008080;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .place-card {
+            border: none;
+            box-shadow: 0 2px 8px #ddd;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+
+        .place-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .place-card .card-body {
+            padding: 18px;
+        }
+
+        .food-item {
+            background: #f0f8f7;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+        }
+
+        .package-price {
+            color: #e67e22;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .back-button {
+            background-color: #008080;
+            color: white;
+        }
+
+        .back-button:hover {
+            background-color: #006666;
+            color: white;
+        }
+
+        footer {
+            margin-top: 30px;
+        }
+
+        @media (max-width: 576px) {
+            .main-image {
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-6">
+                    <img src="logo1.png" class="img-fluid mx-auto" height="70" width="170">
+                </div>
+
+                <div class="col-7 col-sm-7 col-md-6 col-lg-6 col-xl-6">
+                    <form class="form-inline" style="margin-top: 35px; margin-left: 60px;">
+                        <div class="input-group">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search....">
+                            <button class="btn btn-success" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="width: 110px; text-align: center;">HOME</a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link" href="Destinations.html" style="width: 160px; text-align: center;">DESTINATIONS</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Packages.html" style="width: 160px; text-align: center;">PACKAGES</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Adventure.html" style="width: 130px; text-align: center;">ADVENTURE</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html" style="width: 110px; text-align: center;">GALLERY</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html" style="width: 110px; text-align: center;">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+<div class="destination-header">
+    <h1 id="stateName">Explore India</h1>
+    <p id="tagline">Discover beautiful destinations with SafarNova</p>
+</div>
+
+<div class="container">
+
+    <div class="details-box" id="details">
+
+        <h4>Loading destination details...</h4>
+
+    </div>
+
+</div>
+<footer class="bg-dark">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <h4 style="color: white; text-align: center;">&copy; 2026 SafarNova. All Rights Reserved.</h4>
+            </div>
+        </div>
+    </footer>
+
+<script>
+
+    var params = new URLSearchParams(window.location.search);
+    var state = params.get("state");
+
+    // All destination information
+    var packages = {
+
+        "Rajasthan": {
+            tagline: "Discover the Royal Land of Kings",
+            image: "rajasthan.png",
+            about: "Rajasthan is a beautiful state in northwestern India known for royal palaces, historic forts, colourful markets, traditional music and the Thar Desert. Jaipur is its capital and is popularly called the Pink City.",
+            best: "October to March",
+            duration: "3 Days / 2 Nights",
+            price: "₹12,000",
+            inclusions: "Sample package: hotel accommodation, breakfast and local sightseeing. Confirm transport and entry fees separately.",
+            places: [
+                {
+                    name: "Hawa Mahal, Jaipur",
+                    image: "hawamahal.png",
+                    info: "Hawa Mahal is one of Jaipur's most famous landmarks. Its pink facade has many small windows designed to allow royal women to observe street life while maintaining privacy."
+                },
+                {
+                    name: "Amber Fort, Jaipur",
+                    image: "amberfort.png",
+                    info: "Amber Fort is a historic hilltop fort known for its grand courtyards, decorative gateways, mirror work and views of the surrounding hills."
+                },
+                
+            ],
+            food: [
+                ["Dal Baati Churma", "A traditional combination of baked wheat balls, lentils and sweet crumbled wheat."],
+                ["Gatte Ki Sabzi", "Gram-flour dumplings cooked in a spiced yogurt gravy."],
+                ["Ghewar", "A popular disc-shaped sweet often prepared for festivals."],
+                ["Laal Maas", "A traditional spicy meat curry."]
+            ],
+            activities: [
+                "Explore traditional markets in Jaipur.",
+                "Enjoy a camel safari near Jaisalmer.",
+                "Discover royal architecture and local handicrafts."
+            ],
+            plan: [
+                "Day 1: Arrive in Jaipur, visit Hawa Mahal and explore the local market.",
+                "Day 2: Visit Amber Fort and City Palace, and enjoy traditional Rajasthani food.",
+                "Day 3: Enjoy breakfast, buy souvenirs and depart."
+            ]
+        },
+
+        "Kerala": {
+            tagline: "Experience God's Own Country",
+            image: "kerala.png",
+            about: "Kerala, in southern India, is famous for its green landscapes, tea plantations, backwaters, beaches, wildlife and rich cultural traditions. Malayalam is the main language.",
+            best: "September to March",
+            duration: "4 Days / 3 Nights",
+            price: "₹16,000",
+            inclusions: "Sample package: hotel accommodation, breakfast and selected sightseeing. Houseboat meals, transfers and entry tickets should be confirmed separately.",
+            places: [
+                {
+                    name: "Munnar Tea Gardens",
+                    image: "keralatea.png",
+                    info: "Munnar is a hill station surrounded by tea plantations, misty hills and scenic viewpoints. It is a favourite destination for nature lovers."
+                },
+               
+                {
+                    name: "Fort Kochi",
+                    image: "fortkochi.png",
+                    info: "Fort Kochi features colonial-era streets, historic buildings, art cafes and the famous Chinese fishing nets."
+                },
+               
+            ],
+            food: [
+                ["Appam and Stew", "Soft fermented rice pancakes served with a mild vegetable or meat stew."],
+                ["Kerala Sadya", "A traditional feast served with rice and a variety of vegetarian dishes."],
+                ["Puttu and Kadala Curry", "Steamed rice flour and coconut served with black chickpea curry."],
+                ["Banana Chips", "Crispy banana slices fried in coconut oil."]
+            ],
+            activities: [
+                "Enjoy a backwater boat cruise.",
+                "Walk through Munnar's tea gardens.",
+                "Discover Kerala's traditional art and dance."
+            ],
+            plan: [
+                "Day 1: Arrive in Kochi and explore Fort Kochi.",
+                "Day 2: Travel to Munnar and visit tea plantations.",
+                "Day 3: Enjoy the Alleppey backwaters and local scenery.",
+                "Day 4: Have breakfast and depart."
+            ]
+        },
+
+        "Goa": {
+            tagline: "Enjoy Beaches, Sunsets and Portuguese Heritage",
+            image: "goa.png",
+            about: "Goa is India's smallest state by area. It is famous for sandy beaches, historic churches, Portuguese-influenced architecture, seafood and lively coastal culture.",
+            best: "November to February",
+            duration: "3 Days / 2 Nights",
+            price: "₹9,000",
+            inclusions: "Sample package: accommodation, breakfast and selected sightseeing. Water sports, transfers and entry tickets may cost extra.",
+            places: [
+                {
+                    name: "Baga Beach",
+                    image: "goabeach.png",
+                    info: "Baga Beach is popular for its lively atmosphere, beachside restaurants, evening walks and seasonal water sports."
+                },
+                {
+                    name: "Fort Aguada",
+                    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=80",
+                    info: "Fort Aguada is a seventeenth-century Portuguese fort overlooking the Arabian Sea. It is known for its coastal views and historic lighthouse."
+                },
+               
+            ],
+            food: [
+                ["Goan Fish Curry", "A coastal curry traditionally prepared with fish, coconut and spices."],
+                ["Bebinca", "A layered Goan dessert made with coconut milk, eggs and sugar."],
+                ["Prawn Balchao", "A spicy, tangy preparation of prawns."],
+                ["Chicken Xacuti", "A rich curry prepared with roasted spices and coconut."]
+            ],
+            activities: [
+                "Watch the sunset at the beach.",
+                "Explore the historic streets of Old Goa.",
+                "Try permitted seasonal water sports."
+            ],
+            plan: [
+                "Day 1: Arrive in Goa, relax at Baga Beach and enjoy the sunset.",
+                "Day 2: Visit Fort Aguada, Old Goa and local markets.",
+                "Day 3: Enjoy breakfast and depart."
+            ]
+        },
+
+        "Himachal Pradesh": {
+            tagline: "Discover the Beauty of the Himalayas",
+            image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80",
+            about: "Himachal Pradesh is a Himalayan state known for snow-covered mountains, pine forests, apple orchards, hill stations and adventure activities.",
+            best: "March to June for pleasant weather; winter for snow where available",
+            duration: "4 Days / 3 Nights",
+            price: "₹14,000",
+            inclusions: "Sample package: accommodation, breakfast and selected sightseeing. Mountain transport, permits and adventure activities should be checked separately.",
+            places: [
+               
+                {
+                    name: "Solang Valley",
+                    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=80",
+                    info: "Solang Valley near Manali offers mountain scenery and seasonal activities such as skiing or paragliding when conditions permit."
+                },
+                {
+                    name: "Hadimba Temple",
+                    image: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=700&q=80",
+                    info: "This distinctive wooden temple in Manali is surrounded by cedar forest and is dedicated to Hadimba Devi."
+                },
+               
+            ],
+            food: [
+                ["Siddu", "A traditional steamed wheat-bread dish from Himachal."],
+                ["Dham", "A festive meal with regional rice, lentil and yogurt-based dishes."],
+                ["Madra", "A traditional chickpea or bean dish cooked with yogurt and spices."],
+                ["Babru", "A local stuffed fried bread."]
+            ],
+            activities: [
+                "Enjoy scenic mountain drives.",
+                "Explore hill-town markets and temples.",
+                "Try permitted seasonal adventure activities."
+            ],
+            plan: [
+                "Day 1: Arrive in Shimla and explore Mall Road.",
+                "Day 2: Travel towards Manali and enjoy mountain views.",
+                "Day 3: Visit Hadimba Temple and Solang Valley, subject to access.",
+                "Day 4: Breakfast and departure."
+            ]
+        },
+
+        "Assam": {
+            tagline: "Discover amazing destinations in Assam",
+            image: "https://tse4.mm.bing.net/th/id/OIP.6i7pk4T7I4DBNijtXU4jIAHaDm?r=0&pid=Api&h=220&P=0",
+            about: "Assam is a scenic state known for its lush green tea gardens, the mighty Brahmaputra River, Kaziranga National Park, vibrant Bihu festivals, wildlife and traditional Assamese food.",
+            best: "March to June and September to November for many destinations",
+            duration: "4 Days / 3 Nights",
+            price: "₹13,000",
+            inclusions: "Sample package: accommodation, breakfast and selected sightseeing. Rafting, permits, transport and entry fees may be additional.",
+            places: [
+                {
+                    name: "Naini Lake, Nainital",
+                    image: "https://tse3.mm.bing.net/th/id/OIP.4KMY0HDM8g3UubasDVFvKgHaE6?r=0&pid=Api&h=220&P=0",
+                    info: "Naini Lake is a scenic lake surrounded by hills. Visitors can enjoy the lakeside promenade and boating when available."
+                },
+                {
+                    name: "Mussoorie",
+                    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=80",
+                    info: "Mussoorie is a hill station known for mountain views, walking streets, waterfalls and nearby viewpoints."
+                },
+               
+            ],
+            food: [
+                ["Aloo Ke Gutke", "Spiced potatoes prepared with local herbs."],
+                ["Kafuli", "A traditional green-leaf curry from Uttarakhand."],
+                ["Bal Mithai", "A popular brown sweet coated with small sugar balls."],
+                ["Chainsoo", "A regional dish made from roasted black gram."]
+            ],
+            activities: [
+                "Enjoy boating at Naini Lake.",
+                "Explore hill-station viewpoints.",
+                "Visit spiritual sites and riverside ghats."
+            ],
+            plan: [
+                "Day 1: Arrive in Nainital and explore the lake area.",
+                "Day 2: Visit nearby viewpoints and local attractions.",
+                "Day 3: Explore a selected hill town or spiritual destination.",
+                "Day 4: Breakfast and departure."
+            ]
+        },
+
+        "Maharashtra": {
+            tagline: "Discover Historic Forts and Vibrant Cities",
+            image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=1200&q=80",
+            about: "Maharashtra is a diverse state known for Mumbai, the Sahyadri mountains, historic Maratha forts, ancient rock-cut caves, beaches and rich Maharashtrian food traditions.",
+            best: "October to February for many city, heritage and hill destinations",
+            duration: "3 Days / 2 Nights",
+            price: "₹8,000",
+            inclusions: "Sample package: accommodation, breakfast and selected sightseeing. Intercity transport, entry fees and guided tours should be confirmed separately.",
+            places: [
+                {
+                    name: "Gateway of India, Mumbai",
+                    image: "mumbai1.png",
+                    info: "The Gateway of India is a landmark monument on Mumbai's waterfront, near the historic Taj Mahal Palace hotel."
+                },
+                               
+                {
+                    name: "Ellora Caves",
+                    image: "ellora.png",
+                    info: "Ellora features remarkable rock-cut monuments representing Buddhist, Hindu and Jain traditions. The Kailasa Temple is a major highlight."
+                },
+               
+            ],
+            food: [
+                ["Vada Pav", "A popular Mumbai street-food snack with a potato fritter in bread."],
+                ["Misal Pav", "A spicy sprouted-bean curry served with bread."],
+                ["Puran Poli", "A sweet flatbread filled with a lentil and jaggery mixture."],
+                ["Pithla Bhakri", "A traditional gram-flour preparation served with flatbread."]
+            ],
+            activities: [
+                "Explore Mumbai's historic waterfront.",
+                "Discover ancient caves and architecture.",
+                "Visit hill forts and scenic viewpoints."
+            ],
+            plan: [
+                "Day 1: Arrive in Mumbai and visit the Gateway of India.",
+                "Day 2: Explore selected heritage attractions or a nearby historic site.",
+                "Day 3: Enjoy local Maharashtrian food and depart."
+            ]
+        },
+
+        "Meghalaya": {
+            tagline: "Discover amazing destinations in Meghalaya",
+            image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
+            about: "Meghalaya is a stunning state known for its rolling green hills, spectacular waterfalls, living root bridges, misty valleys, crystal-clear rivers, unique Khasi and Garo cultures and traditional cuisine",
+            best: "October to March",
+            duration: "3 Days / 2 Nights",
+            price: "₹10,000",
+            inclusions: "Sample package: accommodation, breakfast and selected sightseeing. Transport between cities and monument entry fees should be confirmed separately.",
+            places: [
+                {
+                    name: "Taj Mahal, Agra",
+                    image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=700&q=80",
+                    info: "The Taj Mahal is a UNESCO World Heritage Site built by Mughal emperor Shah Jahan in memory of Mumtaz Mahal. It is celebrated for its white marble architecture."
+                },
+                {
+                    name: "Agra Fort",
+                    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=700&q=80",
+                    info: "Agra Fort is a historic Mughal fortress with palaces, courtyards and impressive red sandstone walls."
+                },
+                
+            ],
+            food: [
+                ["Agra Petha", "A traditional translucent sweet made from ash gourd."],
+                ["Bedai and Jalebi", "A popular breakfast combination of fried bread and syrupy sweet."],
+                ["Tunday Kebabi", "A famous Lucknow-style kebab preparation."],
+                ["Banarasi Chaat", "A variety of tangy, spicy street-food snacks."]
+            ],
+            activities: [
+                "Explore Mughal monuments and architecture.",
+                "Discover traditional markets and local crafts.",
+                "Experience riverfront culture in Varanasi."
+            ],
+            plan: [
+                "Day 1: Arrive in Agra and visit the Taj Mahal.",
+                "Day 2: Explore Agra Fort and other nearby heritage sites.",
+                "Day 3: Enjoy local food and depart."
+            ]
+        },
+
+        "odisha": {
+            tagline: "Discover amazing destinations in Odisha",
+            image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80",
+            about: "Odisha is a culturally rich state known for the Jagannath Temple in Puri, beautiful beaches, ancient temples, classical Odissi dance, tribal traditions and delicious Odia cuisine..",
+            best: "November to February; check seasonal dates for the Rann of Kutch",
+            duration: "3 Days / 2 Nights",
+            price: "₹11,000",
+            inclusions: "Sample package: accommodation, breakfast and selected sightseeing. Transfers, permits and special festival activities may cost extra.",
+            places: [
+                {
+                    name: "Statue of Unity",
+                    image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=700&q=80",
+                    info: "The Statue of Unity near Kevadia honours Sardar Vallabhbhai Patel. The surrounding attraction area includes viewpoints, gardens and visitor facilities."
+                },
+                {
+                    name: "Rann of Kutch",
+                    image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=700&q=80",
+                    info: "The Great Rann of Kutch is a vast seasonal salt marsh known for its white landscape, cultural events and distinctive desert scenery."
+                },
+                
+            ],
+            food: [
+                ["Dhokla", "A soft, steamed savoury snack made from fermented batter."],
+                ["Thepla", "A spiced flatbread often made with fenugreek leaves."],
+                ["Undhiyu", "A mixed vegetable dish traditionally associated with Gujarat."],
+                ["Khandvi", "Thin gram-flour rolls seasoned with spices and coconut."]
+            ],
+            activities: [
+                "Explore Gujarati handicrafts and markets.",
+                "Visit historic temples and cultural landmarks.",
+                "Experience the Rann's seasonal landscape when accessible."
+            ],
+            plan: [
+                "Day 1: Arrive and explore a selected local heritage attraction.",
+                "Day 2: Visit the Statue of Unity or another preselected regional attraction.",
+                "Day 3: Enjoy Gujarati food, shop for handicrafts and depart."
+            ]
+        }
+
+    };
+
+    var selected = packages[state];
+    var content = document.getElementById("details");
+
+    // Create safe HTML text
+    function escapeHTML(value) {
+        return String(value).replace(/[&<>"']/g, function (char) {
+            return {
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;"
+            }[char];
+        });
+    }
+
+    if (selected) {
+
+        document.getElementById("stateName").textContent = state;
+        document.getElementById("tagline").textContent = selected.tagline;
+        document.title = "SafarNova - " + state;
+
+        content.innerHTML = `
+            <img src="${selected.image}"
+                 class="main-image"
+                 alt="${escapeHTML(state)}">
+
+            <h2 class="section-title">About ${escapeHTML(state)}</h2>
+            <p>${escapeHTML(selected.about)}</p>
+
+            <p>
+                <span class="info-label">Best Time to Visit:</span>
+                ${escapeHTML(selected.best)}
+            </p>
+
+            <h2 class="section-title">Famous Places to Visit</h2>
+
+            <div class="row">
+                ${selected.places.map(function(place) {
+                    return `
+                        <div class="col-lg-6 col-md-6 mb-3">
+                            <div class="card place-card">
+                                <img src="${place.image}"
+                                     class="card-img-top"
+                                     alt="${escapeHTML(place.name)}">
+
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        ${escapeHTML(place.name)}
+                                    </h5>
+
+                                    <p class="card-text">
+                                        ${escapeHTML(place.info)}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join("")}
+            </div>
+
+            <h2 class="section-title">Famous Local Food</h2>
+
+            <div class="row">
+                ${selected.food.map(function(food) {
+                    return `
+                        <div class="col-md-6">
+                            <div class="food-item">
+                                <h5>${escapeHTML(food[0])}</h5>
+                                <p class="mb-0">${escapeHTML(food[1])}</p>
+                            </div>
+                        </div>
+                    `;
+                }).join("")}
+            </div>
+
+            <h2 class="section-title">Things to Do</h2>
+
+            <ul>
+                ${selected.activities.map(function(activity) {
+                    return `<li class="mb-2">${escapeHTML(activity)}</li>`;
+                }).join("")}
+            </ul>
+
+            <h2 class="section-title">Tour Itinerary</h2>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Day</th>
+                            <th>Travel Plan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${selected.plan.map(function(day) {
+                            return `
+                                <tr>
+                                    <td>${escapeHTML(day.split(":")[0])}</td>
+                                    <td>${escapeHTML(day.substring(day.indexOf(":") + 1).trim())}</td>
+                                </tr>
+                            `;
+                        }).join("")}
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="section-title">Package Information</h2>
+
+            <p>
+                <span class="info-label">Duration:</span>
+                ${escapeHTML(selected.duration)}
+            </p>
+
+            <p>
+                <span class="info-label">Accommodation:</span>
+                ${escapeHTML(selected.duration.split(" / ")[1])}
+            </p>
+
+            <p>
+                <span class="info-label">Package Inclusions:</span>
+                ${escapeHTML(selected.inclusions)}
+            </p>
+
+            <p class="package-price">
+                ${escapeHTML(selected.price)} per person
+            </p>
+
+            <p class="text-muted">
+                Prices are illustrative for this student project, not confirmed
+                booking offers. Actual costs depend on travel dates and inclusions.
+            </p>
+
+            <a href="packages.html" class="btn back-button">
+                Back to Packages
+            </a>
+        `;
+
+    } else {
+
+        document.getElementById("stateName").textContent =
+            "Destination Not Found";
+
+        document.getElementById("tagline").textContent =
+            "Please select a destination from our packages.";
+
+        content.innerHTML = `
+            <h4>Sorry, this package could not be found.</h4>
+            <p>Please return to the packages page and select a state.</p>
+            <a href="Package.html" class="btn back-button">
+                View All Packages
+            </a>
+        `;
+    }
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

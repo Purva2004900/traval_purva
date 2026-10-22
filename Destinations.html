@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SafarNova- Destinations</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="popper.js"></script>
+    <script type="text/javascript" src="bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="Master.css">
+
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+
+    <style type="text/css">
+        #plan:hover {
+            text-decoration: underline;
+            color: #ff471a;
+        }
+
+        #zoom:hover {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-6">
+                    <img src="logo1.png" class="img-fluid mx-auto" height="70" width="170">
+                </div>
+
+                <div class="col-7 col-sm-7 col-md-6 col-lg-6 col-xl-6">
+                    <form class="form-inline" style="margin-top: 35px; margin-left: 60px;">
+                        <div class="input-group">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search....">
+                            <button class="btn btn-success" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="width: 110px; text-align: center;">HOME</a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Destinations.html" style="width: 160px; text-align: center;">DESTINATIONS</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Packages.html" style="width: 160px; text-align: center;">PACKAGES</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Adventure.html" style="width: 130px; text-align: center;">ADVENTURE</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html" style="width: 110px; text-align: center;">GALLERY</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html" style="width: 110px; text-align: center;">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section>
+
+        <div class="container">
+            <div class="cont">
+                <div class="row">
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <img src="ellora.png" height="320" width="720" class="img-thumbnail img-fluid mx-auto d-block"><br>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <p style="font-size: 23px; line-height: 28px; text-align: center;">
+                            <b><i>"The world is a book, and those who do not travel read only one page."</i></b>
+                            – Saint Augustine
+                            <br>
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <p style="font-size: 20px; line-height: 28px; text-align: justify;">
+                            <b>-</b> Discover amazing destinations with SafarNova, from beautiful beaches and peaceful hill stations to historical monuments and vibrant cities. Every destination offers a unique experience and unforgettable memories.
+                            <br><br>
+
+                            <b>-</b> Choose a destination according to your interests, budget and travel plans. Whether you love nature, culture, sightseeing or adventure, explore new places and make every journey special.
+                        </p><br>
+                    </div>
+
+                </div>
+            </div>
+        </div><br>
+
+
+        <div class="container">
+            <div class="cont2" id="DestinationsSection1">
+
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h1 style="text-align: center;">- Explore Destinations That Match Your Travel Style -</h1>
+                    </div>
+                </div><br>
+
+                <div class="row">
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="DietPlan" style="border:3px solid #77b300; border-radius: 20px; padding: 15px 5px 5px 5px;">
+
+                            <a href="BeautifulBeachesinIndia.html">
+                                <h3 id="plan" style="text-align: center; color: black;">Beautiful Beaches in India</h3>
+                            </a>
+
+                            <a href="BeautifulBeachesinIndia.html">
+                                <img id="zoom" src="beach.png" class="feature-img img-thumbnail img-fluid mx-auto d-block" height="250" width="450" style="border-radius: 20px;">
+                            </a>
+
+                            <p style="text-align: justify; font-size: 18px; padding: 8px 10px 5px 10px;">
+                                <i>Enjoy golden sands, blue waters and beautiful sunsets at India's stunning beaches. Visit Goa, Alibaug, Tarkarli and other coastal destinations for a relaxing holiday. Experience the refreshing sea breeze, take peaceful walks along the shore, and enjoy exciting water sports such as parasailing.
+                                <a style="font-size: 19px;" href="BeautifulBeachesinIndia.html"><b><u>Read More >></u></b></a></i>
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="DietPlan1" style="border:3px solid #77b300; border-radius: 20px; padding: 15px 5px 3px 5px;">
+
+                            <a href="HillStations.html">
+                                <h3 id="plan" style="text-align: center; color: black;">Beautiful Hill Stations</h3>
+                            </a>
+
+                            <a href="HillStations.html">
+                                <img id="zoom" src="darjeeling.png" class="feature-img img-thumbnail img-fluid mx-auto d-block" height="330" width="480" style="border-radius: 20px;">
+                            </a>
+
+                            <p style="text-align: justify; font-size: 18px; padding: 0px 10px 2px 10px;">
+                                <i>Escape the hustle and bustle of city life and immerse yourself in the peaceful beauty of the mountains. Enjoy cool weather, mist-covered hills, lush green valleys, refreshing waterfalls, and breathtaking panoramic views. Whether you’re looking for a relaxing weekend, a romantic escape, a family holiday, or an adventurous trip with friends, mountain destinations offer the perfect blend of relaxation and exploration.
+                                <a style="font-size: 19px;" href="HillStations.html"><b><u>Read More >></u></b></a></i>
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div><br><br><br>
+
+
+        <div class="container">
+            <div>
+                <div id="DestinationsSection2">
+
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <h1 style="text-align: center;">- Top 10 Places to Explore -</h1>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div style="border:3px solid #77b300; border-radius: 20px;" class="bg-light">
+
+                                <h3 style="text-align: center; border-bottom: 3px solid #77b300; border-radius: 20px; padding-top: 10px; padding-bottom: 10px;">Top Hill Stations</h3>
+
+                                <ul style="padding-left: 100px; font-size: 19px;">
+                                    <li>Mahabaleshwar</li>
+                                    <li>Matheran</li>
+                                    <li>Lonavala</li>
+                                    <li>Manali</li>
+                                    <li>Shimla</li>
+                                    <li>Ooty</li>
+                                    <li>Darjeeling</li>
+                                    <li>Mussoorie</li>
+                                    <li>Mount Abu</li>
+                                    <li>Kodaikanal</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div style="border:3px solid #77b300; border-radius: 20px;" class="bg-light">
+
+                                <h3 style="text-align: center; border-bottom: 3px solid #77b300; border-radius: 20px; padding-top: 10px; padding-bottom: 10px;">Top Beach Destinations</h3>
+
+                                <ul style="padding-left: 100px; font-size: 19px;">
+                                    <li>Goa</li>
+                                    <li>Alibaug</li>
+                                    <li>Tarkarli</li>
+                                    <li>Gokarna</li>
+                                    <li>Kovalam</li>
+                                    <li>Varkala</li>
+                                    <li>Puri</li>
+                                    <li>Marina Beach</li>
+                                    <li>Radhanagar Beach</li>
+                                    <li>Ganpatipule</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div style="border:3px solid #77b300; border-radius: 20px;" class="bg-light">
+
+                                <h3 style="text-align: center; border-bottom: 3px solid #77b300; border-radius: 20px; padding-top: 10px; padding-bottom: 10px;">Top Heritage Places</h3>
+
+                                <ul style="padding-left: 100px; font-size: 19px;">
+                                    <li>Taj Mahal</li>
+                                    <li>Jaipur</li>
+                                    <li>Hampi</li>
+                                    <li>Ajanta Caves</li>
+                                    <li>Ellora Caves</li>
+                                    <li>Red Fort</li>
+                                    <li>Qutub Minar</li>
+                                    <li>Gateway of India</li>
+                                    <li>Konark Sun Temple</li>
+                                    <li>Khajuraho Temples</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section><br>
+
+<footer class="bg-dark">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <h4 style="color: white; text-align: center;">&copy; 2026 SafarNova. All Rights Reserved.</h4>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
