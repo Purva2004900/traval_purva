@@ -197,7 +197,7 @@
     var params = new URLSearchParams(window.location.search);
     var state = params.get("state");
 
-    // All destination information
+
     var packages = {
 
         "Rajasthan": {
@@ -292,12 +292,12 @@
                 {
                     name: "Baga Beach",
                     image: "goabeach.png",
-                    info: "Baga Beach is popular for its lively atmosphere, beachside restaurants, evening walks and seasonal water sports."
+                    info: "Baga Beach stands as a beacon of North Goa’s exuberant spirit. Historically, this stretch was a quiet fishing village, but over decades, it has transformed into one of India’s most celebrated coastal destinations. Its name is believed to be derived from the ‘Baga Creek’ that flows into the Arabian Sea at the northern end of the beach."
                 },
                 {
-                    name: "Fort Aguada",
-                    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=80",
-                    info: "Fort Aguada is a seventeenth-century Portuguese fort overlooking the Arabian Sea. It is known for its coastal views and historic lighthouse."
+                    name: "Dudhsagar Falls",
+                    image: "Dudhsagar Falls.png",
+                    info: "Located on the Mandovi River on the border of Goa and Karnataka, Dudhsagar Falls is one of India's tallest waterfalls. Its name, meaning 'Sea of Milk,' comes from the powerful cascade of white water that foams and froths as it plunges down four tiers from a height of over 300 meters."
                 },
                
             ],
@@ -321,7 +321,7 @@
 
         "Himachal Pradesh": {
             tagline: "Discover the Beauty of the Himalayas",
-            image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80",
+            image: "himachal2.png",
             about: "Himachal Pradesh is a Himalayan state known for snow-covered mountains, pine forests, apple orchards, hill stations and adventure activities.",
             best: "March to June for pleasant weather; winter for snow where available",
             duration: "4 Days / 3 Nights",
@@ -331,38 +331,39 @@
                
                 {
                     name: "Solang Valley",
-                    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=80",
+                    image: "solangValley.png",
                     info: "Solang Valley near Manali offers mountain scenery and seasonal activities such as skiing or paragliding when conditions permit."
                 },
                 {
                     name: "Hadimba Temple",
-                    image: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=700&q=80",
+                    image: "HadimbaTemple.png",
                     info: "This distinctive wooden temple in Manali is surrounded by cedar forest and is dedicated to Hadimba Devi."
                 },
                
             ],
+
             food: [
-                ["Siddu", "A traditional steamed wheat-bread dish from Himachal."],
-                ["Dham", "A festive meal with regional rice, lentil and yogurt-based dishes."],
-                ["Madra", "A traditional chickpea or bean dish cooked with yogurt and spices."],
-                ["Babru", "A local stuffed fried bread."]
-            ],
-            activities: [
-                "Enjoy scenic mountain drives.",
-                "Explore hill-town markets and temples.",
-                "Try permitted seasonal adventure activities."
-            ],
-            plan: [
-                "Day 1: Arrive in Shimla and explore Mall Road.",
-                "Day 2: Travel towards Manali and enjoy mountain views.",
-                "Day 3: Visit Hadimba Temple and Solang Valley, subject to access.",
-                "Day 4: Breakfast and departure."
-            ]
+    ["Dham", "A traditional Himachali festive meal featuring rice, lentils and regional curries."],
+    ["Siddu", "A steamed wheat-flour bread commonly served with ghee."],
+    ["Madra", "A rich curry made with chickpeas or other pulses and yogurt."],
+    ["Babru", "A Himachali snack made from wheat dough stuffed with black gram paste."]
+],
+activities: [
+    "Enjoy scenic mountain views and explore hill stations.",
+    "Experience adventure activities such as paragliding or trekking.",
+    "Visit ancient temples and explore traditional Himachali markets."
+],
+plan: [
+    "Day 1: Arrive in Shimla and explore Mall Road.",
+    "Day 2: Visit Kufri and enjoy scenic mountain viewpoints.",
+    "Day 3: Explore nearby villages, temples or nature trails.",
+    "Day 4: Breakfast and departure."
+]
         },
 
         "Assam": {
             tagline: "Discover amazing destinations in Assam",
-            image: "https://tse4.mm.bing.net/th/id/OIP.6i7pk4T7I4DBNijtXU4jIAHaDm?r=0&pid=Api&h=220&P=0",
+            image: "assam2.png",
             about: "Assam is a scenic state known for its lush green tea gardens, the mighty Brahmaputra River, Kaziranga National Park, vibrant Bihu festivals, wildlife and traditional Assamese food.",
             best: "March to June and September to November for many destinations",
             duration: "4 Days / 3 Nights",
@@ -370,39 +371,39 @@
             inclusions: "Sample package: accommodation, breakfast and selected sightseeing. Rafting, permits, transport and entry fees may be additional.",
             places: [
                 {
-                    name: "Naini Lake, Nainital",
-                    image: "https://tse3.mm.bing.net/th/id/OIP.4KMY0HDM8g3UubasDVFvKgHaE6?r=0&pid=Api&h=220&P=0",
-                    info: "Naini Lake is a scenic lake surrounded by hills. Visitors can enjoy the lakeside promenade and boating when available."
+                    name: "Majuli Island",
+                    image: "Majuli Island.png",
+                    info: "Majuli is the world's largest river island, located in the Brahmaputra River. It is a center of Vaishnavite culture in Assam, with numerous satras (monasteries and centers for art) that preserve traditional music, dance, and handicrafts. "
                 },
                 {
-                    name: "Mussoorie",
-                    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=80",
-                    info: "Mussoorie is a hill station known for mountain views, walking streets, waterfalls and nearby viewpoints."
+                    name: "Dibrugarh",
+                    image: "Dibrugarh.png",
+                    info: "Known as the 'Tea City of India,' Dibrugarh is a major city in eastern Assam and the gateway to the tea-producing region of the state. "
                 },
                
             ],
-            food: [
-                ["Aloo Ke Gutke", "Spiced potatoes prepared with local herbs."],
-                ["Kafuli", "A traditional green-leaf curry from Uttarakhand."],
-                ["Bal Mithai", "A popular brown sweet coated with small sugar balls."],
-                ["Chainsoo", "A regional dish made from roasted black gram."]
-            ],
-            activities: [
-                "Enjoy boating at Naini Lake.",
-                "Explore hill-station viewpoints.",
-                "Visit spiritual sites and riverside ghats."
-            ],
-            plan: [
-                "Day 1: Arrive in Nainital and explore the lake area.",
-                "Day 2: Visit nearby viewpoints and local attractions.",
-                "Day 3: Explore a selected hill town or spiritual destination.",
-                "Day 4: Breakfast and departure."
-            ]
+           food: [
+                     ["Khar", "A traditional Assamese dish prepared with raw papaya, pulses and alkaline extract."],
+                     ["Masor Tenga", "A tangy fish curry prepared with tomatoes or lemon."],
+                     ["Pitha", "A traditional rice-based snack often prepared during Bihu."],
+                      ["Laru", "A traditional sweet ladoo made with coconut or sesame seeds."]
+                  ],
+             activities: [
+                              "Explore the wildlife and landscapes of Kaziranga National Park.",
+                                "Enjoy a river cruise on the Brahmaputra River.",
+                              "Visit tea gardens and explore local Assamese culture."
+],
+              plan: [
+    "Day 1: Arrive in Guwahati and visit Kamakhya Temple.",
+    "Day 2: Explore local attractions and enjoy a Brahmaputra River cruise.",
+    "Day 3: Visit a tea garden or explore nearby cultural attractions.",
+    "Day 4: Breakfast and departure."
+]
         },
 
         "Maharashtra": {
             tagline: "Discover Historic Forts and Vibrant Cities",
-            image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=1200&q=80",
+            image: "alibag.png",
             about: "Maharashtra is a diverse state known for Mumbai, the Sahyadri mountains, historic Maratha forts, ancient rock-cut caves, beaches and rich Maharashtrian food traditions.",
             best: "October to February for many city, heritage and hill destinations",
             duration: "3 Days / 2 Nights",
@@ -441,8 +442,8 @@
         },
 
         "Meghalaya": {
-            tagline: "Discover amazing destinations in Meghalaya",
-            image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
+            tagline:"Discover amazing destinations in Meghalaya",
+            image: "meghalaya1.jpg",
             about: "Meghalaya is a stunning state known for its rolling green hills, spectacular waterfalls, living root bridges, misty valleys, crystal-clear rivers, unique Khasi and Garo cultures and traditional cuisine",
             best: "October to March",
             duration: "3 Days / 2 Nights",
@@ -450,38 +451,40 @@
             inclusions: "Sample package: accommodation, breakfast and selected sightseeing. Transport between cities and monument entry fees should be confirmed separately.",
             places: [
                 {
-                    name: "Taj Mahal, Agra",
-                    image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=700&q=80",
+                    name: "Dawki",
+                    image: "dawki.png",
                     info: "The Taj Mahal is a UNESCO World Heritage Site built by Mughal emperor Shah Jahan in memory of Mumtaz Mahal. It is celebrated for its white marble architecture."
                 },
                 {
-                    name: "Agra Fort",
-                    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=700&q=80",
+                    name: "Mawlyngbna",
+                    image: "mawlyngbna.png",
                     info: "Agra Fort is a historic Mughal fortress with palaces, courtyards and impressive red sandstone walls."
                 },
                 
             ],
-            food: [
-                ["Agra Petha", "A traditional translucent sweet made from ash gourd."],
-                ["Bedai and Jalebi", "A popular breakfast combination of fried bread and syrupy sweet."],
-                ["Tunday Kebabi", "A famous Lucknow-style kebab preparation."],
-                ["Banarasi Chaat", "A variety of tangy, spicy street-food snacks."]
-            ],
-            activities: [
-                "Explore Mughal monuments and architecture.",
-                "Discover traditional markets and local crafts.",
-                "Experience riverfront culture in Varanasi."
-            ],
-            plan: [
-                "Day 1: Arrive in Agra and visit the Taj Mahal.",
-                "Day 2: Explore Agra Fort and other nearby heritage sites.",
-                "Day 3: Enjoy local food and depart."
-            ]
+
+           food: [
+    ["Jadoh", "A traditional Khasi rice dish cooked with meat and aromatic spices."],
+    ["Dohneiiong", "A Khasi pork dish prepared with black sesame seeds."],
+    ["Tungrymbai", "A traditional fermented soybean dish with a distinctive flavour."],
+    ["Pukhlein", "A sweet Khasi snack made from rice flour and jaggery."]
+],
+activities: [
+    "Explore the living root bridges of Cherrapunji.",
+    "Visit beautiful waterfalls and enjoy the misty mountain scenery.",
+    "Discover the crystal-clear waters of Dawki and the Umngot River."
+],
+plan: [
+    "Day 1: Arrive in Shillong and explore local attractions.",
+    "Day 2: Visit Cherrapunji and discover its waterfalls and caves.",
+    "Day 3: Explore Dawki, the Umngot River and nearby villages.",
+    "Day 4: Breakfast and departure."
+]
         },
 
         "odisha": {
             tagline: "Discover amazing destinations in Odisha",
-            image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80",
+            image: "odishabeach.png",
             about: "Odisha is a culturally rich state known for the Jagannath Temple in Puri, beautiful beaches, ancient temples, classical Odissi dance, tribal traditions and delicious Odia cuisine..",
             best: "November to February; check seasonal dates for the Rann of Kutch",
             duration: "3 Days / 2 Nights",
@@ -489,33 +492,35 @@
             inclusions: "Sample package: accommodation, breakfast and selected sightseeing. Transfers, permits and special festival activities may cost extra.",
             places: [
                 {
-                    name: "Statue of Unity",
-                    image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=700&q=80",
+                    name: "Gopalpur-on-sea",
+                    image: "odishasea.png",
                     info: "The Statue of Unity near Kevadia honours Sardar Vallabhbhai Patel. The surrounding attraction area includes viewpoints, gardens and visitor facilities."
                 },
                 {
-                    name: "Rann of Kutch",
-                    image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=700&q=80",
+                    name: "Chilika lake",
+                    image: "Chilika lake.jpg",
                     info: "The Great Rann of Kutch is a vast seasonal salt marsh known for its white landscape, cultural events and distinctive desert scenery."
                 },
                 
             ],
+
             food: [
-                ["Dhokla", "A soft, steamed savoury snack made from fermented batter."],
-                ["Thepla", "A spiced flatbread often made with fenugreek leaves."],
-                ["Undhiyu", "A mixed vegetable dish traditionally associated with Gujarat."],
-                ["Khandvi", "Thin gram-flour rolls seasoned with spices and coconut."]
-            ],
-            activities: [
-                "Explore Gujarati handicrafts and markets.",
-                "Visit historic temples and cultural landmarks.",
-                "Experience the Rann's seasonal landscape when accessible."
-            ],
-            plan: [
-                "Day 1: Arrive and explore a selected local heritage attraction.",
-                "Day 2: Visit the Statue of Unity or another preselected regional attraction.",
-                "Day 3: Enjoy Gujarati food, shop for handicrafts and depart."
-            ]
+    ["Pakhala Bhata", "A traditional fermented rice dish served with accompaniments."],
+    ["Dalma", "A nutritious dish made with lentils and vegetables."],
+    ["Chhena Poda", "A famous baked dessert made from fresh cottage cheese."],
+    ["Rasagola", "A popular sweet made from soft cheese balls soaked in sugar syrup."]
+],
+activities: [
+    "Visit the famous Jagannath Temple in Puri.",
+    "Explore the architectural beauty of the Konark Sun Temple.",
+    "Relax on Puri Beach and discover local handicrafts."
+],
+plan: [
+    "Day 1: Arrive in Bhubaneswar and explore its ancient temples.",
+    "Day 2: Visit Puri, Jagannath Temple and Puri Beach.",
+    "Day 3: Explore the Konark Sun Temple and nearby attractions.",
+    "Day 4: Breakfast and departure."
+]
         }
 
     };
@@ -523,7 +528,7 @@
     var selected = packages[state];
     var content = document.getElementById("details");
 
-    // Create safe HTML text
+    
     function escapeHTML(value) {
         return String(value).replace(/[&<>"']/g, function (char) {
             return {
